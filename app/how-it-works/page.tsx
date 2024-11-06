@@ -13,7 +13,9 @@ export default function HowItWorks() {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-           <h1 className="text-4xl font-bold text-teal-700 text-center mb-8">How It Works</h1>
+           <h1 className="text-4xl font-bold bg-gradient-to-r from-teal-500 via-emerald-500 to-green-500 bg-clip-text text-transparent animate-gradient-x text-center mb-8">
+            How The Orca Monsta Ecosystem Works.
+          </h1>
 
 <section className="bg-white/60 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-teal-200">
   <div className="flex justify-center items-center">
