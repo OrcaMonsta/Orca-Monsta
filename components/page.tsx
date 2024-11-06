@@ -22,7 +22,7 @@ export function Page() {
       <div className="container flex h-14 items-center">
         <Link className="flex items-center gap-2 font-semibold" href="#">
           <video 
-            src="/Orcamonsta.mp4"
+            src="/OrcaMonsta.mp4"
             autoPlay
             loop
             muted
@@ -77,7 +77,7 @@ export function Page() {
               The Future of Crypto is Here.
             </h2>
             <p className="max-w-[42rem] leading-normal text-teal-600 sm:text-xl sm:leading-8">
-              Discover the power of decentralized currency with Orca Monsta. Generate passive income from liquidity pools for holding Orca.
+              Discover the power of decentralized currency with Orca Monsta. Generate passive income from liquidity pools for holding Orca Monsta.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button className="bg-teal-600 hover:bg-teal-700 text-white" size="lg">Get Started</Button>
