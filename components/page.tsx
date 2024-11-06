@@ -30,8 +30,17 @@ export function Page() {
             className="h-16 w-16"
             onError={(e) => {
               console.error('Video loading error:', e);
+              const videoElement = e.target as HTMLVideoElement;
+              console.error('Video error details:', {
+                error: e,
+                networkState: videoElement.networkState,
+                readyState: videoElement.readyState
+              });
             }}
-          />
+          >
+            <source src="/OrcaMonsta.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div className="flex flex-col">
             <span>Orca Monsta - Developed by @STACCoverflow</span>
             <div className="text-center w-full">
