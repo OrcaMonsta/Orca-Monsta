@@ -140,7 +140,7 @@ export function Page() {
         </section>
         <section className="container space-y-6 py-8 md:py-12 lg:py-24">
   <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-    <h2 className="font-heading text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl">
+    <h2 className="font-heading text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl text-teal-600">
       How It Works
     </h2>
     <Button 
