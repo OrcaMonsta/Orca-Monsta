@@ -207,6 +207,14 @@ export function Page() {
                 <Globe className="h-5 w-5" />
                 <span className="sr-only">Website</span>
               </Link>
+              <Link href="https://dexscreener.com/solana/6wsryhng1c7t9s5csqxcijxmivbmu8p8dmh9ckuhew2a" target="_blank" className="hover:text-teal-700 transition-colors">
+                <img 
+                  src="https://images.seeklogo.com/logo-png/52/1/dex-screener-logo-png_seeklogo-527276.png" 
+                  alt="DEX Screener" 
+                  className="h-5 w-5"
+                />
+                <span className="sr-only">DEX Screener</span>
+              </Link>
             </div>
             <div className="flex gap-4">
               <Link className="text-sm font-medium hover:underline underline-offset-4" href="/terms">
