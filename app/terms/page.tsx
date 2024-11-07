@@ -1,15 +1,15 @@
-"use client"
+ "use client"
 
 import { motion } from "framer-motion"
 import Link from "next/link"
 
-const currentDate = new Date().toLocaleDateString('en-US', {
-  month: 'long',
-  day: 'numeric',
-  year: 'numeric'
-});
-
 export default function Terms() {
+  const currentDate = new Date().toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-50 via-emerald-100 to-blue-200">
       <div className="max-w-4xl mx-auto p-8">
@@ -19,7 +19,7 @@ export default function Terms() {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          <h1 className="text-4xl font-bold text-teal-700 text-center mb-8">Terms of Agreement</h1>
+          <h1 className="text-6xl font-bold text-teal-700 text-center mb-8">Terms of Agreement</h1>
           <p className="text-teal-600 text-center">
             <span className="font-bold">Last updated:</span> {currentDate}
           </p>
@@ -56,16 +56,28 @@ export default function Terms() {
             </ul>
           </section>
 
-          {/* Additional sections following the same pattern */}
-
           <section className="bg-white/60 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-teal-200">
             <h2 className="text-2xl font-bold text-teal-700 mb-4">Contact Us</h2>
             <div className="text-teal-700">
               <p>If you have any questions or concerns about these Terms, please contact us:</p>
-              <div className="mt-4">
-                <p className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600 mb-4">ORCA MONSTA</p>
-                <p>Email: <a href="mailto:orcamonsta@gmail.com" className="hover:text-teal-600 transition-colors">orcamonsta@gmail.com</a></p>
-                <p>Telegram: <a href="https://t.me/+8BkOy7gJUElkZjQx" target="_blank" rel="noopener noreferrer" className="hover:text-teal-600 transition-colors">https://t.me/+8BkOy7gJUElkZjQx</a></p>
+              <div className="mt-4 space-y-2">
+                <p className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">ORCA MONSTA</p>
+                <p className="flex items-center gap-2">
+                  <span className="font-bold min-w-[80px]">Email:</span>
+                  <a href="mailto:orcamonsta@gmail.com" 
+                     className="hover:text-teal-600 transition-colors underline-offset-4 hover:underline">
+                    orcamonsta@gmail.com
+                  </a>
+                </p>
+                <p className="flex items-center gap-2">
+                  <span className="font-bold min-w-[80px]">Telegram:</span>
+                  <a href="https://t.me/+8BkOy7gJUElkZjQx" 
+                     target="_blank" 
+                     rel="noopener noreferrer" 
+                     className="hover:text-teal-600 transition-colors underline-offset-4 hover:underline">
+                    Join our community
+                  </a>
+                </p>
               </div>
             </div>
           </section>
@@ -73,7 +85,7 @@ export default function Terms() {
           <div className="text-center">
             <Link 
               href="/"
-              className="px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
             >
               Back to Home
             </Link>
