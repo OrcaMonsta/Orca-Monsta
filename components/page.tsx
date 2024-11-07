@@ -211,7 +211,7 @@ export function Page() {
                 <img 
                   src="/dexscreenericon.png" 
                   alt="Dex Screener Logo" 
-                  className="h-5 w-5"
+                  className="h-6 w-6"
                 />
                 <span className="sr-only">DEX Screener</span>
               </Link>
