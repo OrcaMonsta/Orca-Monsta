@@ -109,7 +109,7 @@ export default function PrivacyPolicy() {
               <div className="mt-8 mb-4">
                 <Link 
                   href="/"
-                  className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-teal-500 via-emerald-500 to-green-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-teal-500/90 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 active:scale-95"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
                 >
                   Back to Home
                 </Link>
