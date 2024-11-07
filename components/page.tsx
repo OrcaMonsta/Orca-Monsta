@@ -11,131 +11,152 @@ export function Page() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-teal-50 via-emerald-100 to-blue-200">
-      <header className="sticky top-0 z-50 w-full border-b border-teal-200 bg-white/70 backdrop-blur-lg supports-[backdrop-filter]:bg-white/60">
-        <div className="container flex h-14 items-center">
-          <Link className="flex items-center gap-2 font-semibold" href="#">
-          <iframe
+      <header className="sticky top-0 z-50 w-full border-b border-teal-200 bg-white/80 backdrop-blur-lg">
+        <div className="container flex h-16 items-center justify-between px-4">
+          {/* Logo and Contract Section */}
+          <div className="flex items-center gap-4">
+            {/* YouTube iframe with better containment */}
+            <div className="relative h-12 w-12 overflow-hidden rounded-lg shadow-md">
+              <iframe
                 src="https://www.youtube.com/embed/yceBdKReq6g?autoplay=1&mute=1&loop=1&playlist=yceBdKReq6g"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                className="h-14 w-14"
-              ></iframe>
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            
+            {/* Text Content with Better Typography */}
             <div className="flex flex-col">
-              <span>Orca Monsta - Developed by @STACCoverflow</span>
-              <div className="text-center w-full">
-                <p className="text-sm text-muted-foreground">
-                  Contract Address: <span className="font-mono">CaLyryATQhnVZaau425zAJ9fNf4uNWVa1GKD6JN94AX9</span>
-                </p>
+              <span className="text-sm font-semibold">
+                <span className="bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">Orca Monsta</span> 
+                <span className="text-teal-600">- Developed by @STACCoverflow</span>
+              </span>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-teal-600 font-bold">Contract Address:</span>
+                <code className="rounded bg-gray-100 px-2 py-0.5 text-xs font-mono text-teal-600 hover:bg-gray-200 transition-colors cursor-pointer" 
+                      onClick={() => navigator.clipboard.writeText('CaLyryATQhnVZaau425zAJ9fNf4uNWVa1GKD6JN94AX9')}
+                      title="Click to copy">
+                  CaLyryATQhnVZaau425zAJ9fNf4uNWVa1GKD6JN94AX9
+                </code>
               </div>
             </div>
-          </Link>
+          </div>
+
+          {/* Navigation */}
+          <div className="flex items-center">
+            {/* Mobile Menu Button */}
             <button
-              className="ml-auto md:hidden"
+              className="ml-auto md:hidden rounded-lg p-2 hover:bg-gray-100 transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? <X className="h-5 w-5 text-teal-600" /> : <Menu className="h-5 w-5 text-teal-600" />}
             </button>
+
+            {/* Navigation Links */}
             <nav className={`${
               isMenuOpen 
-                ? 'absolute left-0 right-0 top-14 border-b bg-background p-4 md:border-0' 
+                ? 'absolute left-0 right-0 top-16 border-b bg-white/95 backdrop-blur-lg shadow-lg' 
                 : 'hidden'
-              } md:static md:ml-auto md:flex md:items-center md:space-x-6 md:p-0`}>
-              <Link className="block py-2 text-sm font-medium text-foreground/60 transition-colors hover:text-foreground md:py-0" href="#">
-                Home
-              </Link>
-              <Link className="block py-2 text-sm font-medium text-foreground/60 transition-colors hover:text-foreground md:py-0" href="/whitepaper">
-                About
-              </Link>
-              <Link className="block py-2 text-sm font-medium text-foreground/60 transition-colors hover:text-foreground md:py-0" href="mailto:OrcaMonsta@gmail.com">
-                Contact
-              </Link>
-              <Link className="block py-2 text-sm font-medium text-foreground/60 transition-colors hover:text-foreground md:py-0" href="/whitepaper">
-                Whitepaper
-              </Link>
+              } md:static md:flex md:items-center md:space-x-8 md:bg-transparent md:shadow-none`}>
+              {[
+                { href: '#', label: 'Home' },
+                { href: '/whitepaper', label: 'About' },
+                { href: 'mailto:OrcaMonsta@gmail.com', label: 'Contact' },
+                { href: '/whitepaper', label: 'Whitepaper' }
+              ].map(({ href, label }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className="block px-4 py-2 text-sm font-medium text-gray-600 hover:text-teal-600 transition-colors md:px-0 md:py-0"
+                >
+                  {label}
+                </Link>
+              ))}
             </nav>
           </div>
-        </header>
-        <main className="flex-1 relative z-10">
-          <section className="container space-y-6 py-8 md:py-12 lg:py-24 relative">
-            <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px)] bg-[size:14px] opacity-20" />
-            
-            <div className="mx-auto flex max-w-[64rem] flex-col items-center gap-4 text-center">
-              <div className="space-y-2">
-                <h1 className="font-heading text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent animate-fade-in">
-                  ORCA MONSTA
-                </h1>
-                <h2 className="font-heading text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl text-teal-700 animate-fade-in-up">
-                  The Future of Crypto is Here.
-                </h2>
-              </div>
-              <p className="max-w-[42rem] leading-normal text-teal-600 sm:text-xl sm:leading-8 animate-fade-in-up delay-100">
-                Discover the power of decentralized currency with Orca Monsta. Generate passive income from liquidity pools for holding Orca Monsta.
-              </p>
-              <div className="flex space-x-4 animate-fade-in-up delay-200">
-                <Link 
-                  href="/get-started"
-                  className="px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
-                >
-                  Get Started
-                </Link>
-                <Link 
-                  href="/whitepaper"
-                  className="px-6 py-3 border-2 border-teal-600 text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-colors duration-200"
-                >
-                  Read Whitepaper
-                </Link>
-              </div>
-            </div>
-          </section>
-          <section className="container space-y-6 py-8 md:py-12 lg:py-24">
-            <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-              <h2 className="font-heading text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl text-teal-700">
-                Why Choose Orca Monsta?
+        </div>
+      </header>
+      <main className="flex-1 relative z-10">
+        <section className="container space-y-6 py-8 md:py-12 lg:py-24 relative">
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px)] bg-[size:14px] opacity-20" />
+          
+          <div className="mx-auto flex max-w-[64rem] flex-col items-center gap-4 text-center">
+            <div className="space-y-2">
+              <h1 className="font-heading text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent animate-fade-in">
+                ORCA MONSTA
+              </h1>
+              <h2 className="font-heading text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl text-teal-700 animate-fade-in-up">
+                The Future of Crypto is Here.
               </h2>
             </div>
-            <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
-              <Card className="flex flex-col bg-white/60 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm hover:scale-105 group">
-                <CardHeader>
-                  <div className="group-hover:scale-110 transition-transform duration-300">
-                    <DollarSign className="h-10 w-10 text-teal-600" />
-                  </div>
-                  <CardTitle className="text-teal-700 group-hover:text-teal-600 transition-colors">
-                    Revenue from Fees
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-teal-600">
-                    Enjoy constant revenue from fees generated by organic & automated transactions from multiple liquidity pools, from Orca Monsta.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="flex flex-col bg-white/60 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm">
-                <CardHeader>
-                  <TrendingUp className="h-10 w-10 text-teal-600" />
-                  <CardTitle className="text-teal-700">Appreciating Asset</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-teal-600">
-                    Enjoy the inherient appreciation of Orca Monsta as Burn functions continually reduce the amounts of Orca Monsta in ciruclation.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="flex flex-col bg-white/60 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm sm:col-span-2 md:col-span-1">
-                <CardHeader>
-                  <Bitcoin className="h-10 w-10 text-teal-600" />
-                  <CardTitle className="text-teal-700">Easy to Use</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-teal-600">
-                    Brought to you on the solana network, providing seamless and secure tx's. Use your favorite wallet provider to HODL Orca Monsta today!
-                  </p>
-                </CardContent>
-              </Card>
+            <p className="max-w-[42rem] leading-normal text-teal-600 sm:text-xl sm:leading-8 animate-fade-in-up delay-100">
+              Discover the power of decentralized currency with Orca Monsta. Generate passive income from liquidity pools for holding Orca Monsta.
+            </p>
+            <div className="flex space-x-4 animate-fade-in-up delay-200">
+              <Link 
+                href="/get-started"
+                className="px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+              >
+                Get Started
+              </Link>
+              <Link 
+                href="/whitepaper"
+                className="px-6 py-3 border-2 border-teal-600 text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-colors duration-200"
+              >
+                Read Whitepaper
+              </Link>
             </div>
-          </section>
-          <section className="container space-y-6 py-8 md:py-12 lg:py-24">
+          </div>
+        </section>
+        <section className="container space-y-6 py-8 md:py-12 lg:py-24">
+          <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+            <h2 className="font-heading text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl text-teal-700">
+              Why Choose Orca Monsta?
+            </h2>
+          </div>
+          <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+            <Card className="flex flex-col bg-white/60 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm hover:scale-105 group">
+              <CardHeader>
+                <div className="group-hover:scale-110 transition-transform duration-300">
+                  <DollarSign className="h-10 w-10 text-teal-600" />
+                </div>
+                <CardTitle className="text-teal-700 group-hover:text-teal-600 transition-colors">
+                  Revenue from Fees
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-teal-600">
+                  Enjoy constant revenue from fees generated by organic & automated transactions from multiple liquidity pools, from Orca Monsta.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="flex flex-col bg-white/60 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm">
+              <CardHeader>
+                <TrendingUp className="h-10 w-10 text-teal-600" />
+                <CardTitle className="text-teal-700">Appreciating Asset</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-teal-600">
+                  Enjoy the inherient appreciation of Orca Monsta as Burn functions continually reduce the amounts of Orca Monsta in ciruclation.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="flex flex-col bg-white/60 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm sm:col-span-2 md:col-span-1">
+              <CardHeader>
+                <Bitcoin className="h-10 w-10 text-teal-600" />
+                <CardTitle className="text-teal-700">Easy to Use</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-teal-600">
+                  Brought to you on the solana network, providing seamless and secure tx's. Use your favorite wallet provider to HODL Orca Monsta today!
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+        <section className="container space-y-6 py-8 md:py-12 lg:py-24">
     <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
       <h2 className="font-heading text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl text-teal-600">
         How It Works
