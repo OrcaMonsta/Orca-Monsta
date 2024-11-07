@@ -73,7 +73,7 @@ export function Page() {
         <section className="container space-y-6 py-8 md:py-12 lg:py-24">
           <div className="mx-auto flex max-w-[64rem] flex-col items-center gap-4 text-center">
             <h1 className="font-heading text-3xl font-bold sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
-              ORCAMONSTA
+              ORCA MONSTA
             </h1>
             <h2 className="font-heading text-3xl font-bold sm:text-5xl md:text-6xl lg:text-7xl text-teal-700">
               The Future of Crypto is Here.

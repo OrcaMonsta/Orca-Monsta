@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-100 via-teal-500 to-emerald-500">
+    <div className="min-h-screen bg-gradient-to-b from-teal-50 via-emerald-100 to-blue-200">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-lg p-4 mb-8 inline-block w-full">
           <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 via-emerald-500 to-green-500 text-center">
