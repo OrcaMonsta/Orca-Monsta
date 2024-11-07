@@ -10,18 +10,18 @@ export function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-50 via-teal-300 to-emerald-300">
-    {/* Header */}
-    <div className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-teal-600">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Your existing header content */}
-          <div className="flex items-center">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-teal-50 via-emerald-100 to-blue-200">
+      {/* Header with matching gradient */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-teal-50 via-emerald-100 to-blue-200 backdrop-blur-sm border-b border-teal-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Your existing header content */}
+            <div className="flex items-center">
 
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
     <header className="sticky top-0 z-50 w-full border-b border-teal-200 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-14 items-center">
@@ -181,7 +181,7 @@ export function Page() {
   </div>
 </section>
 </main>
-      <footer className="w-full bg-gradient-to-r from-emerald-50 via-teal-300 to-emerald-300 backdrop-blur-sm border-t border-teal-600 py-1 sticky bottom-0 left-0 right-0 z-50">
+      <footer className="w-full bg-gradient-to-b from-teal-50 via-emerald-100 to-blue-200 backdrop-blur-sm border-t border-teal-600 py-1 sticky bottom-0 left-0 right-0 z-50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center justify-center space-y-1">
             <Link 
@@ -211,7 +211,7 @@ export function Page() {
                 <img 
                   src="https://images.seeklogo.com/logo-png/52/1/dex-screener-logo-png_seeklogo-527276.png" 
                   alt="DEX Screener" 
-                  className="h-5 w-5"
+                  className="h-5 w-5 invert"
                 />
                 <span className="sr-only">DEX Screener</span>
               </Link>
