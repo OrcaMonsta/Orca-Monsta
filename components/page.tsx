@@ -10,37 +10,30 @@ export function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-teal-50 via-emerald-100 to-blue-200 relative overflow-hidden">
-    {/* Subtle floating background elements */}
-    <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute -left-4 top-1/4 h-72 w-72 rounded-full bg-teal-300/20 blur-3xl animate-pulse"></div>
-      <div className="absolute right-0 top-1/2 h-96 w-96 rounded-full bg-blue-300/20 blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-emerald-300/20 blur-3xl animate-pulse"></div>
+    <div className="flex min-h-screen flex-col items-center justify-center">
+    {/* Header */}
+    <div className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Your existing header content */}
+          <div className="flex items-center">
+
+          </div>
+        </div>
+      </div>
     </div>
 
     <header className="sticky top-0 z-50 w-full border-b border-teal-200 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-14 items-center">
         <Link className="flex items-center gap-2 font-semibold" href="#">
-          <video 
-            src="/OrcaMonsta.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="h-16 w-16"
-            onError={(e) => {
-              console.error('Video loading error:', e);
-              const videoElement = e.target as HTMLVideoElement;
-              console.error('Video error details:', {
-                error: e,
-                networkState: videoElement.networkState,
-                readyState: videoElement.readyState
-              });
-            }}
-          >
-            <source src="/OrcaMonsta.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <iframe
+              src="https://www.youtube.com/embed/yceBdKReq6g?autoplay=1&mute=1&loop=1&playlist=yceBdKReq6g"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="h-14 w-14"
+            ></iframe>
           <div className="flex flex-col">
             <span>Orca Monsta - Developed by @STACCoverflow</span>
             <div className="text-center w-full">
