@@ -81,11 +81,19 @@ export function Page() {
             <p className="max-w-[42rem] leading-normal text-teal-600 sm:text-xl sm:leading-8">
               Discover the power of decentralized currency with Orca Monsta. Generate passive income from liquidity pools for holding Orca Monsta.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button className="bg-teal-600 hover:bg-teal-700 text-white" size="lg">Get Started</Button>
-              <Button size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-50">
-                <Link href="/whitepaper">Read Whitepaper</Link>
-              </Button>
+            <div className="flex space-x-4">
+              <Link 
+                href="/get-started"
+                className="px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+              >
+                Get Started
+              </Link>
+              <Link 
+                href="/whitepaper"
+                className="px-6 py-3 border-2 border-teal-600 text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-colors duration-200"
+              >
+                Read Whitepaper
+              </Link>
             </div>
           </div>
         </section>
@@ -136,14 +144,12 @@ export function Page() {
     <h2 className="font-heading text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl text-teal-600">
       How It Works
     </h2>
-    <Button 
-      size="lg"
-      className="mt-4 bg-teal-600 hover:bg-teal-700 text-white"
+    <Link 
+      href="/how-it-works"
+      className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
     >
-      <Link href="/how-it-works" className="text-white no-underline">
-        Watch Video
-      </Link>
-    </Button>
+      How it works
+    </Link>
   </div>
 </section>
         <section className="container space-y-6 py-8 md:py-12 lg:py-24">
