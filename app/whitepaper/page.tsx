@@ -11,6 +11,7 @@ import {
   BarChart as ChartIcon,
   Rocket as RocketIcon
 } from "lucide-react"
+import Link from "next/link"
 
 export default function Whitepaper() {
   const sections = [
@@ -134,12 +135,12 @@ export default function Whitepaper() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl font-bold mb-6 text-teal-700">Ready to dive in with Orca? 🐋</h2>
-          <Button 
-            className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-6 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            onClick={() => window.location.href = '/'}
+          <Link 
+            href="/"
+            className="px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
           >
             Join the Pod
-          </Button>
+          </Link>
         </motion.div>
       </div>
     </div>
