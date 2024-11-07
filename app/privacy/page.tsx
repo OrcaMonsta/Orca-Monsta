@@ -3,61 +3,103 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 
-export default function Privacy() {
+export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-teal-50 via-emerald-100 to-blue-200">
-      <div className="max-w-4xl mx-auto p-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-8"
-        >
-          <h1 className="text-4xl font-bold text-teal-700 text-center mb-8">Privacy Policy</h1>
-          <p className="text-teal-600 text-center">Last updated: November 5, 2024</p>
+    <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <h1 className="text-4xl font-bold text-teal-600 mb-8 text-center">Privacy Policy</h1>
+      
+      <div className="space-y-8 text-gray-700">
+        <section>
+          <p className="mb-4">
+            This privacy policy ("policy") will help you understand how OrcaMonsta ("us", "we", "our") uses and 
+            protects the data you provide to us when you visit and use our website ("service").
+          </p>
+          <p className="mb-4">
+            We reserve the right to change this policy at any given time, of which you will be promptly updated. 
+            If you want to make sure that you are up to date with the latest changes, we advise you to frequently visit this page.
+          </p>
+        </section>
 
-          {/* Introduction */}
-          <motion.section className="bg-white/60 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-teal-200">
-            <h2 className="text-2xl font-bold text-teal-700 mb-4">Introduction</h2>
-            <p className="text-teal-700 leading-relaxed">
-              Your privacy is important to us. This Privacy Disclaimer outlines how Orca Monsta ("we," "our," "us") 
-              collects, uses, and protects your information when you visit our website and use our services related 
-              to ORCA Token ("Token"). By accessing or using our website, you consent to the practices described in this policy.
-            </p>
-          </motion.section>
+        <section>
+          <h2 className="text-2xl font-semibold text-teal-600 mb-4">What User Data We Collect</h2>
+          <p className="mb-2">When you visit the website, we may collect the following data:</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>Your IP address.</li>
+            <li>Your contact information and email address.</li>
+            <li>Other information such as interests and preferences.</li>
+            <li>Data profile regarding your online behavior on our website.</li>
+          </ul>
+        </section>
 
-          {/* Information We Collect */}
-          <motion.section className="bg-white/60 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-teal-200">
-            <h2 className="text-2xl font-bold text-teal-700 mb-4">Information We Collect</h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="font-semibold text-teal-700">Personal Information</h3>
-                <p className="text-teal-700">When you register on our site or use our services, we may collect personal information such as your name, email address, and contact details.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-teal-700">Transactional Information</h3>
-                <p className="text-teal-700">To facilitate transactions, we may collect information related to your cryptocurrency transactions, including wallet addresses, transaction amounts, and transaction history.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-teal-700">Usage Data</h3>
-                <p className="text-teal-700">We may collect information about your interactions with our website, including IP addresses, browser type, operating system, referring URLs, page views, and clickstream data.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-teal-700">Payment Information</h3>
-                <p className="text-teal-700">We may collect payment information to process transactions. This information is handled securely and in compliance with relevant payment processing regulations.</p>
-              </div>
-            </div>
-          </motion.section>
+        <section>
+          <h2 className="text-2xl font-semibold text-teal-600 mb-4">Why We Collect Your Data</h2>
+          <p className="mb-2">We are collecting your data for several reasons:</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>To better understand your needs.</li>
+            <li>To improve our services and products.</li>
+            <li>To send you promotional emails containing information we think you will find interesting.</li>
+            <li>To contact you to fill out surveys and participate in other types of market research.</li>
+            <li>To customize our website according to your online behavior and personal preferences.</li>
+          </ul>
+        </section>
 
-          <div className="text-center">
-            <Link 
-              href="/"
-              className="inline-block bg-teal-600 text-white px-6 py-3 rounded-full hover:bg-teal-700 transition-colors"
-            >
-              Back to Home
-            </Link>
-          </div>
-        </motion.div>
+        <section>
+          <h2 className="text-2xl font-semibold text-teal-600 mb-4">Safeguarding and Securing the Data</h2>
+          <p>
+            OrcaMonsta is committed to securing your data and keeping it confidential. We have done all in our power 
+            to prevent data theft, unauthorized access, and disclosure by implementing the latest technologies and 
+            software, which help us safeguard all the information we collect online.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold text-teal-600 mb-4">Our Cookie Policy</h2>
+          <p className="mb-4">
+            Once you agree to allow our website to use cookies, you also agree to use the data it collects regarding 
+            your online behavior (analyze web traffic, web pages you visit and spend the most time on).
+          </p>
+          <p className="mb-4">
+            The data we collect by using cookies is used to customize our website to your needs. After we use the 
+            data for statistical analysis, the data is completely removed from our systems.
+          </p>
+          <p className="mb-4">
+            If you want to disable cookies, you can do it by accessing the settings of your internet browser. You 
+            can visit <a href="https://www.internetcookies.com" className="text-teal-600 hover:underline">www.internetcookies.com</a>, 
+            which contains comprehensive information on how to do this on a wide variety of browsers and devices.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold text-teal-600 mb-4">Links to Other Websites</h2>
+          <p>
+            Our website contains links that lead to other websites. If you click on these links, OrcaMonsta is not 
+            held responsible for your data and privacy protection. Visiting those websites is not governed by this 
+            privacy policy agreement. Make sure to read the privacy policy documentation of the website you go to 
+            from our website.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold text-teal-600 mb-4">Restricting the Collection of your Personal Data</h2>
+          <p className="mb-2">
+            At some point, you might wish to restrict the use and collection of your personal data. You can achieve 
+            this by doing the following:
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>When you are filling the forms on the website, make sure to check if there is a box which you can 
+                leave unchecked, if you don't want to disclose your personal information.</li>
+            <li>If you have already agreed to share your information with us, feel free to contact us via email 
+                and we will be more than happy to change this for you.</li>
+          </ul>
+        </section>
+
+        <section>
+          <p className="mt-8 text-sm">
+            OrcaMonsta will not lease, sell or distribute your personal information to any third parties, unless we 
+            have your permission. We might do so if the law forces us. Your personal information will be used when 
+            we need to send you promotional materials if you agree to this privacy policy.
+          </p>
+        </section>
       </div>
     </div>
   )
