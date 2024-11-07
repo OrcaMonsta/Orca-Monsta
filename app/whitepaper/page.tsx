@@ -23,7 +23,7 @@ export default function Whitepaper() {
     {
       title: "2. Vision",
       icon: <UsersIcon className="h-8 w-8 text-blue-500" />,
-      content: "Orca aims to build a community-driven economy where loyalty and active participation are handsomely rewarded. By distributing trade fees to holders, Orca fosters a strong, supportive network."
+      content: "The ORCA MONSTA Team aims to build a community-driven economy where loyalty and active participation are handsomely rewarded. By distributing trade fees to holders, Orca fosters a strong, supportive network. We are currently developing ground breaking state of the art technology not yet seen in the crypto space, that will be released soon. We will implement this technology as well as other developments from both the ORCA MONSTA developers and suggestions from the community to ensure the overall long term sustainability of ORCA MONSTA ."
     },
     {
       title: "3. How It Works",
@@ -31,7 +31,8 @@ export default function Whitepaper() {
       content: [
         "Fee Distribution: A small dynamic percentage of every on-chain transaction is collected as fees.",
         "Orca Monsta Holders: These collected fees are distributed proportionally to holders at regular 24hr (randomized) intervals.",
-        "Transparency: All transactions and fee distributions are transparently recorded on the blockchain for anyone to verify."
+        "Transparency: All transactions and fee distributions are transparently recorded on the blockchain for anyone to verify.",
+        "New technology: Currently we are developing ground breaking technology not yet seen in the crypto space, that will be released in the coming weeks / months. Unfortunately due to the sensitive nature of this new technology, we will not be disclosing any details at this time."
       ]
     },
     {
@@ -134,7 +135,7 @@ export default function Whitepaper() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl font-bold mb-6 text-teal-700">Ready to dive in with Orca? 🐋</h2>
+          <h2 className="text-4xl font-bold mb-6 text-teal-700">Ready to dive in with $ORCA? 🐋</h2>
           <Link 
             href="/"
             className="px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
