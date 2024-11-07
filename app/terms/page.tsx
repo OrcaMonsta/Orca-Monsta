@@ -3,6 +3,12 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 
+const currentDate = new Date().toLocaleDateString('en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric'
+});
+
 export default function Terms() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-teal-50 via-emerald-100 to-blue-200">
@@ -14,7 +20,9 @@ export default function Terms() {
           className="space-y-8"
         >
           <h1 className="text-4xl font-bold text-teal-700 text-center mb-8">Terms of Agreement</h1>
-          <p className="text-teal-600 text-center">Last updated: November 5, 2024</p>
+          <p className="text-teal-600 text-center">
+            <span className="font-bold">Last updated:</span> {currentDate}
+          </p>
 
           <section className="bg-white/60 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-teal-200">
             <h2 className="text-2xl font-bold text-teal-700 mb-4">Introduction</h2>
@@ -55,9 +63,9 @@ export default function Terms() {
             <div className="text-teal-700">
               <p>If you have any questions or concerns about these Terms, please contact us:</p>
               <div className="mt-4">
-                <p>Orca Monsta</p>
-                <p>Email: orcamonsta@gmail.com</p>
-                <p>Telegram: https://t.me/+8BkOy7gJUElkZjQx</p>
+                <p className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600 mb-4">ORCA MONSTA</p>
+                <p>Email: <a href="mailto:orcamonsta@gmail.com" className="hover:text-teal-600 transition-colors">orcamonsta@gmail.com</a></p>
+                <p>Telegram: <a href="https://t.me/+8BkOy7gJUElkZjQx" target="_blank" rel="noopener noreferrer" className="hover:text-teal-600 transition-colors">https://t.me/+8BkOy7gJUElkZjQx</a></p>
               </div>
             </div>
           </section>
@@ -65,7 +73,7 @@ export default function Terms() {
           <div className="text-center">
             <Link 
               href="/"
-              className="inline-block bg-teal-600 text-white px-6 py-3 rounded-full hover:bg-teal-700 transition-colors"
+              className="px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
             >
               Back to Home
             </Link>
