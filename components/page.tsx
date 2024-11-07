@@ -96,7 +96,9 @@ export function Page() {
             </p>
             <div className="flex space-x-4 animate-fade-in-up delay-200">
               <Link 
-                href="/get-started"
+                href="https://dexscreener.com/solana/6wsryhng1c7t9s5csqxcijxmivbmu8p8dmh9ckuhew2a"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
               >
                 Get Started
