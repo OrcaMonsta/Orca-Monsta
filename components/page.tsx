@@ -10,9 +10,9 @@ export function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-50 via-teal-300 to-emerald-300">
     {/* Header */}
-    <div className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-teal-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Your existing header content */}
@@ -180,17 +180,17 @@ export function Page() {
     </div>
   </div>
 </section>
-      </main>
-      <footer className="border-t border-teal-200 bg-white/70 backdrop-blur-sm">
-        <div className="container flex flex-col items-center gap-4 py-10">
-          <div className="flex flex-col items-center gap-4">
+</main>
+      <footer className="w-full bg-gradient-to-r from-emerald-50 via-teal-300 to-emerald-300 backdrop-blur-sm border-t border-teal-600 py-1 sticky bottom-0 left-0 right-0 z-50">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col items-center justify-center space-y-1">
             <Link 
-              className="flex items-center gap-2 font-bold text-3xl bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent hover:scale-105 transition-transform" 
+              className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600 hover:scale-105 transition-transform leading-none" 
               href="#"
             >
               ORCAMONSTA
             </Link>
-            <p className="text-sm text-teal-600 text-center">
+            <p className="text-black font-medium text-xs">
               © 2024 ORCAMONSTA. All rights reserved.
             </p>
             {/* Social Media Links */}
