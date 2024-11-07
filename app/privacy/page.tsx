@@ -93,12 +93,27 @@ export default function PrivacyPolicy() {
           </ul>
         </section>
 
-        <section>
-          <p className="mt-8 text-sm">
-            OrcaMonsta will not lease, sell or distribute your personal information to any third parties, unless we 
-            have your permission. We might do so if the law forces us. Your personal information will be used when 
+        <section className="text-center">
+          <p className="mt-6 text-[10px] text-gray-500 leading-tight">
+            OrcaMonsta will not lease, sell or distribute your personal information to any third parties. We might do so if the law forces us. Your personal information will be used when 
             we need to send you promotional materials if you agree to this privacy policy.
           </p>
+          
+          <div className="mt-8 mb-4">
+            <Link 
+              href="/"
+              className="inline-flex items-center justify-center rounded-md bg-gradient-to-r from-teal-500 via-emerald-500 to-green-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-teal-500/90 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 active:scale-95"
+            >
+              Back to Home
+            </Link>
+          </div>
+
+          <div className="mt-4 text-[8px] text-gray-400">
+            © 2024 OrcaMonsta. All rights reserved.
+          </div>
+          <div className="text-[8px] text-gray-400">
+            Developed by @STACCoverflow
+          </div>
         </section>
       </div>
     </div>
