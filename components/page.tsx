@@ -116,7 +116,7 @@ export function Page() {
               Why Choose Orca Monsta?
             </h2>
           </div>
-          <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+          <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-4">
             <Card className="flex flex-col bg-white/60 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
               <CardHeader>
                 <div className="group-hover:scale-110 transition-transform duration-300">
@@ -161,6 +161,22 @@ export function Page() {
               <CardContent>
                 <p className="text-teal-600">
                   Brought to you on the solana network, providing seamless and secure tx's. Use your favorite wallet provider to HODL Orca Monsta today!
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="flex flex-col bg-white/60 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+              <CardHeader>
+                <div className="group-hover:scale-110 transition-transform duration-300">
+                  <FileText className="h-10 w-10 text-teal-600" />
+                </div>
+                <CardTitle className="text-teal-700 group-hover:text-teal-600 transition-colors">
+                  Technology
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-teal-600">
+                  Built on Solana's cutting-edge blockchain, featuring automated smart contracts, advanced tokenomics and our own revolutionary, never before seen technology.
                 </p>
               </CardContent>
             </Card>
