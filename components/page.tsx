@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Twitter, MessageCircle, Globe, FileText, Bitcoin, DollarSign, TrendingUp, Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { TokenData } from '@/components/TokenData'
 
 export function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -92,7 +93,7 @@ export function Page() {
               </h2>
             </div>
             <p className="max-w-[42rem] leading-normal text-teal-600 sm:text-xl sm:leading-8 animate-fade-in-up delay-100">
-              Discover the power of decentralized currency with Orca Monsta. Generate passive income from liquidity pools for holding Orca Monsta.
+              Discover the power of decentralized currency with Orca Monsta today. Generate passive income from multiple liquidity pools via revolutionary algostable ecosystem when you HODL Orca Monsta.
             </p>
             <div className="flex space-x-4 animate-fade-in-up delay-200">
               <Link 
