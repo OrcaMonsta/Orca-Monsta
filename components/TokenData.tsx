@@ -19,7 +19,7 @@ export function TokenData() {
           'https://public-api.birdeye.so/public/token_price?address=CaLyryATQhnVZaau425zAJ9fNf4uNWVa1GKD6JN94AX9',
           {
             headers: {
-              'X-API-KEY': 'aeca3fb262a9415abe1930ff9aa5f3f3'
+              'X-API-KEY': 'you neva get this'
             }
           }
         );
