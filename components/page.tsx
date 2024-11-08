@@ -93,7 +93,7 @@ export function Page() {
               </h2>
             </div>
             <p className="max-w-[42rem] leading-normal text-teal-600 sm:text-xl sm:leading-8 animate-fade-in-up delay-100">
-              Discover the power of decentralized currency with Orca Monsta today. Generate passive income from multiple liquidity pools via revolutionary algostable ecosystem when you HODL Orca Monsta.
+              Discover the power of decentralized currency with Orca Monsta today. Generate passive income from multiple liquidity pools with our revolutionary algostable ecosystem when you HODL Orca Monsta.
             </p>
             <div className="flex space-x-4 animate-fade-in-up delay-200">
               <Link 
