@@ -110,11 +110,10 @@ export function Page() {
                   <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-[#6acd0c] scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                 </Link>
                 <Link 
-                  href="/whitepaper" 
-                  className="relative text-[#30aa49] hover:text-[#6acd0c] transition-colors group"
+                  href="/whitepaper"
+                  className="px-6 py-3 border-2 border-[#30aa49] text-[#30aa49] font-medium rounded-lg hover:bg-white/50 transition-colors duration-200 text-sm sm:text-base"
                 >
-                  Whitepaper
-                  <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-[#6acd0c] scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                  Read Whitepaper
                 </Link>
               </nav>
 
@@ -130,44 +129,41 @@ export function Page() {
       </header>
       <main className="flex-1 w-full bg-gradient-to-r from-[#faef55]/30 to-[#30aa49]/30 font-['Cornerstone'] tracking-tighter">
         <div className="container mx-auto px-4">
-        <section className="pt-0 md:pt-0 lg:pt-0">
-  <div className="mx-auto text-center relative">
-    {/* Full-width image container with removed top spacing */}
-    <div className="w-full px-4 sm:px-6 lg:px-8">
-      <div className="relative w-full max-w-[1200px] mx-auto"> 
-        <img
-          src="/Landing Page Title.png"
-          alt="Orca Monsta"
-          className="w-full h-auto object-contain mt-0"
-          style={{
-            maxHeight: '70vh',
-            objectFit: 'contain',
-            objectPosition: 'top'
-          }}
-        />
-        
-        {/* Buttons overlaying the image - position maintained */}
-        <div className="absolute bottom-[20%] left-[35%] transform -translate-x-1/2 flex justify-center space-x-4 w-full px-4 sm:px-6">
-          <Link 
-            href="https://dexscreener.com/solana/6wsryhng1c7t9s5csqxcijxmivbmu8p8dmh9ckuhew2a"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 bg-gradient-to-r from-[#30aa49] to-[#6acd0c] text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-sm sm:text-base"
-          >
-            Buy Orca Monsta
-          </Link>
-          <Link 
-            href="/whitepaper"
-            className="px-6 py-3 border-2 border-teal-600 text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-colors duration-200 text-sm sm:text-base"
-          >
-            Read Whitepaper
-          </Link>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+          <section className="relative min-h-screen">
+            <div className="mx-auto text-center">
+              <div className="w-full px-4 sm:px-6 lg:px-8">
+                <div className="relative w-full max-w-[1200px] mx-auto"> 
+                  <img
+                    src="/Landing Page Title.png"
+                    alt="Orca Monsta"
+                    className="w-full h-auto object-contain"
+                    style={{
+                      maxHeight: '80vh',
+                      objectFit: 'contain',
+                      objectPosition: 'top'
+                    }}
+                  />
+                  
+                  <div className="absolute bottom-[20%] left-[35%] transform -translate-x-1/2 flex justify-center space-x-4 w-full px-4 sm:px-6">
+                    <Link 
+                      href="https://dexscreener.com/solana/6wsryhng1c7t9s5csqxcijxmivbmu8p8dmh9ckuhew2a"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-3 bg-gradient-to-r from-[#30aa49] to-[#6acd0c] text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-sm sm:text-base"
+                    >
+                      Buy Orca Monsta
+                    </Link>
+                    <Link 
+                      href="/whitepaper"
+                      className="px-6 py-3 border-2 border-[#30aa49] text-[#30aa49] font-medium rounded-lg hover:bg-white/50 transition-colors duration-200 text-sm sm:text-base"
+                    >
+                      Read Whitepaper
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
           <section className="py-4 md:py-6 lg:py-12">
             <div className="relative -mt-20 md:-mt-24 lg:-mt-32">
