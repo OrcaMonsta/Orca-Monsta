@@ -132,14 +132,15 @@ export function Page() {
       </header>
       <main className="flex-1 w-full bg-gradient-to-r from-[#faef55]/30 to-[#30aa49]/30 font-['Cornerstone'] tracking-tighter">
         <div className="container mx-auto px-4">
-          <section className="relative">
+          {/* Landing section - added key positioning classes */}
+          <section className="relative min-h-[90vh] flex items-center justify-center z-20">
             <div className="mx-auto text-center">
               <div className="w-full px-4 sm:px-6 lg:px-8">
                 <div className="relative w-full max-w-[1200px] mx-auto"> 
                   <img
                     src="/Landing Page Title.png"
                     alt="Orca Monsta"
-                    className="w-full h-auto object-contain"
+                    className="w-full h-auto object-contain relative z-10"
                     style={{
                       maxHeight: '70vh',
                       objectFit: 'contain',
@@ -147,18 +148,22 @@ export function Page() {
                     }}
                   />
                   
+                  {/* Original button positioning */}
                   <div className="absolute bottom-[20%] left-[35%] transform -translate-x-1/2 flex justify-center space-x-4 w-full px-4 sm:px-6">
+                    {/* DexScreener Button */}
                     <Link 
                       href="https://dexscreener.com/solana/6wsryhng1c7t9s5csqxcijxmivbmu8p8dmh9ckuhew2a"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-3 bg-gradient-to-r from-[#30aa49] to-[#6acd0c] text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-sm sm:text-base"
+                      className="px-6 py-3 bg-gradient-to-r from-[#30aa49] to-[#6acd0c] text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-sm sm:text-base cursor-pointer"
                     >
                       Buy Orca Monsta
                     </Link>
+
+                    {/* Whitepaper Button */}
                     <Link 
                       href="/whitepaper"
-                      className="px-6 py-3 border-2 border-[#30aa49] text-[#30aa49] font-medium rounded-lg hover:bg-white hover:text-[#30aa49] hover:border-[#30aa49] transition-colors duration-200 text-sm sm:text-base"
+                      className="px-6 py-3 border-2 border-[#30aa49] text-[#30aa49] font-medium rounded-lg hover:bg-white hover:text-[#30aa49] hover:border-[#30aa49] transition-colors duration-200 text-sm sm:text-base cursor-pointer"
                     >
                       Read Whitepaper
                     </Link>
