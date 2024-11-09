@@ -38,7 +38,7 @@ export function Page() {
     <div className="min-h-screen flex flex-col font-['Cornerstone'] tracking-tighter bg-gradient-to-r from-[#faef55]/30 to-[#30aa49]/30">
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px)] bg-[size:14px] opacity-3" />
       
-      <header className="fixed top-0 left-0 right-0 z-50 w-full border-b border-[#6acd0c]/20 tracking-tighter">
+      <header className="relative w-full border-b border-[#6acd0c]/20">
         <div className="bg-gradient-to-r from-[#faef55]/30 to-[#30aa49]/30 backdrop-blur-sm">
           <div className="container mx-auto h-16 px-4">
             <div className="grid grid-cols-12 items-center h-full">
@@ -127,7 +127,7 @@ export function Page() {
           </div>
         </div>
       </header>
-      <main className="flex-1 w-full font-['Cornerstone'] tracking-tighter pt-16 pb-24">
+      <main className="flex-1 w-full font-['Cornerstone']">
         <div className="container mx-auto px-4">
         <section className="pt-0 md:pt-0 lg:pt-0">
   <div className="mx-auto text-center relative">
@@ -406,7 +406,7 @@ export function Page() {
           </section>
         </div>
       </main>
-      <footer className="fixed bottom-0 left-0 right-0 z-50 w-full border-t border-[#6acd0c]/20 tracking-tighter">
+      <footer className="w-full border-t border-[#6acd0c]/20">
         <div className="bg-gradient-to-r from-[#faef55]/30 to-[#30aa49]/30 backdrop-blur-sm py-1">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center justify-center space-y-1 font-['Cornerstone']">
