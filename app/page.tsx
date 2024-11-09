@@ -1,6 +1,8 @@
 import { Page } from "@/components/page";
 import Image from "next/image";
 
+export const dynamic = 'force-dynamic'
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#f5f1e4] font-['Cornerstone'] relative overflow-x-hidden">
