@@ -100,3 +100,46 @@ body {
     animation: shimmer 8s ease infinite;
   }
 }
+
+/* Responsive video container */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+@supports not (aspect-ratio: 16 / 9) {
+  .aspect-video::before {
+    float: left;
+    padding-top: 56.25%;
+    content: '';
+  }
+  
+  .aspect-video::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+
+/* Video container styles */
+.video-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .video-container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .video-container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-container {
+    max-width: 1024px;
+  }
+}
