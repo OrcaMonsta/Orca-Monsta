@@ -130,7 +130,7 @@ export function Page() {
       </header>
       <main className="flex-1 w-full bg-gradient-to-r from-[#faef55]/30 to-[#30aa49]/30 font-['Cornerstone'] tracking-tighter">
         <div className="container mx-auto px-4">
-          <section className="relative min-h-screen">
+          <section className="relative">
             <div className="mx-auto text-center">
               <div className="w-full px-4 sm:px-6 lg:px-8">
                 <div className="relative w-full max-w-[1200px] mx-auto"> 
@@ -139,7 +139,7 @@ export function Page() {
                     alt="Orca Monsta"
                     className="w-full h-auto object-contain"
                     style={{
-                      maxHeight: '80vh',
+                      maxHeight: '70vh',
                       objectFit: 'contain',
                       objectPosition: 'top'
                     }}
