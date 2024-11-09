@@ -15,370 +15,499 @@ import {
   DollarSign, 
   TrendingUp, 
   Menu, 
-  X 
+  X, 
+  ArrowRight 
 } from 'lucide-react'
 import { TokenData } from '@/components/TokenData'
 
 export function Page() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
+  };
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-teal-50 via-emerald-100 to-blue-200">
-      <header className="sticky top-0 z-50 w-full border-b border-teal-200 bg-white/80 backdrop-blur-lg">
-        <div className="container flex h-16 items-center justify-between px-4">
-          {/* Logo and Contract Section */}
-          <div className="flex items-center gap-4">
-            {/* YouTube iframe with better containment */}
-            <div className="relative h-12 w-12 overflow-hidden rounded-lg shadow-md">
-              <iframe
-                src="https://www.youtube.com/embed/yceBdKReq6g?autoplay=1&mute=1&loop=1&playlist=yceBdKReq6g"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            </div>
-            
-            {/* Text Content with Better Typography */}
-            <div className="flex flex-col">
-              <span className="text-sm font-semibold">
-                <span className="bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">Orca Monsta</span> 
-                <span className="text-teal-600">- Developed by @STACCoverflow</span>
-              </span>
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-teal-600 font-bold">Contract Address:</span>
-                <code className="rounded bg-gray-100 px-2 py-0.5 text-xs font-mono text-teal-600 hover:bg-gray-200 transition-colors cursor-pointer" 
-                      onClick={() => navigator.clipboard.writeText('CaLyryATQhnVZaau425zAJ9fNf4uNWVa1GKD6JN94AX9')}
-                      title="Click to copy">
-                  CaLyryATQhnVZaau425zAJ9fNf4uNWVa1GKD6JN94AX9
-                </code>
+    <div className="min-h-screen flex flex-col font-['Cornerstone'] tracking-tighter">
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px)] bg-[size:14px] opacity-10" />
+      
+      <header className="sticky top-0 z-50 w-full border-b border-[#6acd0c]/20 tracking-tighter">
+        <div className="bg-gradient-to-r from-[#faef55]/30 to-[#30aa49]/30 backdrop-blur-sm">
+          <div className="container mx-auto h-16 px-4">
+            <div className="grid grid-cols-12 items-center h-full">
+              <div className="col-span-4 flex items-center gap-2 sm:gap-4">
+                <div className="relative h-8 w-8 sm:h-12 sm:w-12 overflow-hidden rounded-lg shadow-md">
+                  <iframe
+                    src="https://www.youtube.com/embed/yceBdKReq6g?autoplay=1&mute=1&loop=1&playlist=yceBdKReq6g"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                </div>
+                
+                <div className="flex flex-col text-left font-['Cornerstone']">
+                  <span className="text-sm sm:text-base font-semibold text-left">
+                    <span className="bg-gradient-to-r from-[#30aa49] to-[#6acd0c] bg-clip-text text-transparent font-bold text-base sm:text-lg">
+                      Orca Monsta
+                    </span>
+                    <span className="text-[#30aa49] hidden sm:inline">
+                      {" - "}
+                      Developed by <Link href="https://x.com/STACCoverflow" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base hover:text-[#6acd0c] transition-colors">@STACCoverflow</Link>
+                    </span>
+                  </span>
+                  <div className="flex items-center gap-1 sm:gap-2 text-left">
+                    <span className="text-xs sm:text-sm text-[#30aa49] font-bold whitespace-nowrap">
+                      Contract:
+                    </span>
+                    <code 
+                      onClick={() => copyToClipboard('CaLyryATQhnVZaau425zAJ9fNf4uNWVa1GKD6JN94AX9')}
+                      className="font-['Cornerstone'] rounded bg-[#30aa49]/5 px-1 sm:px-2 py-0.5 text-[8px] sm:text-xs text-[#30aa49] cursor-copy 
+                      hover:bg-[#30aa49]/10 transition-all duration-200 relative 
+                      transform hover:scale-105 hover:-translate-y-0.5 hover:shadow-lg"
+                      title="Click to copy"
+                    >
+                      CaLyryATQhnVZaau425zAJ9fNf4uNWVa1GKD6JN94AX9
+                      {copied && (
+                        <span className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-black text-white px-2 py-1 rounded text-xs">
+                          Copied!
+                        </span>
+                      )}
+                    </code>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
-          {/* Navigation */}
-          <div className="flex items-center">
-            {/* Mobile Menu Button */}
-            <button
-              className="ml-auto md:hidden rounded-lg p-2 hover:bg-gray-100 transition-colors"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X className="h-5 w-5 text-teal-600" /> : <Menu className="h-5 w-5 text-teal-600" />}
-            </button>
-
-            {/* Navigation Links */}
-            <nav className={`${
-              isMenuOpen 
-                ? 'absolute left-0 right-0 top-16 border-b bg-white/95 backdrop-blur-lg shadow-lg' 
-                : 'hidden'
-              } md:static md:flex md:items-center md:space-x-8 md:bg-transparent md:shadow-none`}>
-              {[
-                { href: '#', label: 'Home' },
-                { href: '/whitepaper', label: 'About' },
-                { href: 'mailto:OrcaMonsta@gmail.com', label: 'Contact' },
-                { href: '/whitepaper', label: 'Whitepaper' }
-              ].map(({ href, label }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  className="block px-4 py-2 text-sm font-medium text-gray-600 hover:text-teal-600 transition-colors md:px-0 md:py-0"
+              <nav className="col-span-6 col-start-8 hidden md:flex md:items-center md:space-x-8 font-['Cornerstone'] text-base sm:text-lg ml-36">
+                <Link 
+                  href="/" 
+                  className="relative text-[#30aa49] hover:text-[#6acd0c] transition-colors group"
                 >
-                  {label}
+                  Home
+                  <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-[#6acd0c] scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                 </Link>
-              ))}
-            </nav>
+                <Link 
+                  href="/about" 
+                  className="relative text-[#30aa49] hover:text-[#6acd0c] transition-colors group"
+                >
+                  About
+                  <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-[#6acd0c] scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                </Link>
+                <Link 
+                  href="mailto:OrcaMonsta@gmail.com" 
+                  className="relative text-[#30aa49] hover:text-[#6acd0c] transition-colors group"
+                >
+                  Contact
+                  <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-[#6acd0c] scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                </Link>
+                <Link 
+                  href="/whitepaper" 
+                  className="relative text-[#30aa49] hover:text-[#6acd0c] transition-colors group"
+                >
+                  Whitepaper
+                  <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-[#6acd0c] scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                </Link>
+              </nav>
+
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="col-span-2 md:hidden p-2 text-[#30aa49] justify-self-end"
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
       </header>
-      <main className="flex-1 relative z-10">
-        <section className="container space-y-6 py-8 md:py-12 lg:py-24 relative">
-          <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px)] bg-[size:14px] opacity-20" />
-          
-          <div className="mx-auto flex max-w-[64rem] flex-col items-center gap-4 text-center">
-            <div className="space-y-2">
-              <h1 className="font-heading text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent animate-gradient text-center">
-                ORCA MONSTA
-              </h1>
-              <h2 className="font-heading text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl text-teal-700 text-center">
-                The Future of Crypto is Here.
-              </h2>
-            </div>
-            <p className="max-w-[42rem] leading-normal text-teal-600 sm:text-xl sm:leading-8 animate-fade-in-up delay-100 text-center">
-              Discover the power of decentralized currency with Orca Monsta today. Generate passive income from multiple liquidity pools with our revolutionary algostable ecosystem when you HODL Orca Monsta.
-            </p>
-            <div className="flex space-x-4 animate-fade-in-up delay-200">
-              <Link 
-                href="https://dexscreener.com/solana/6wsryhng1c7t9s5csqxcijxmivbmu8p8dmh9ckuhew2a"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
-              >
-                Get Started
-              </Link>
-              <Link 
-                href="/whitepaper"
-                className="px-6 py-3 border-2 border-teal-600 text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-colors duration-200"
-              >
-                Read Whitepaper
-              </Link>
-            </div>
-          </div>
-        </section>
-        <section className="container space-y-6 py-8 md:py-12 lg:py-24">
-          <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-            <h2 className="font-heading text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl text-teal-700">
-              Why Choose Orca Monsta?
-            </h2>
-          </div>
-          <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-4">
-            <Card className="flex flex-col bg-white/60 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
-              <CardHeader>
-                <div className="group-hover:scale-110 transition-transform duration-300">
-                  <DollarSign className="h-10 w-10 text-teal-600" />
-                </div>
-                <CardTitle className="text-teal-700 group-hover:text-teal-600 transition-colors">
-                  Revenue from Fees
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-teal-600">
-                  Enjoy constant revenue from fees generated by organic & automated transactions from multiple liquidity pools, By holding $ORCA.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="flex flex-col bg-white/60 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
-              <CardHeader>
-                <div className="group-hover:scale-110 transition-transform duration-300">
-                  <TrendingUp className="h-10 w-10 text-teal-600" />
-                </div>
-                <CardTitle className="text-teal-700 group-hover:text-teal-600 transition-colors">
-                  Appreciating Asset
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-teal-600">
-                  Enjoy the inherient appreciation of Orca Monsta as Burn functions continually reduce the amounts of Orca Monsta in ciruclation.
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="flex flex-col bg-white/60 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group sm:col-span-2 md:col-span-1">
-              <CardHeader>
-                <div className="group-hover:scale-110 transition-transform duration-300">
-                  <Bitcoin className="h-10 w-10 text-teal-600" />
-                </div>
-                <CardTitle className="text-teal-700 group-hover:text-teal-600 transition-colors">
-                  Easy to Use
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-teal-600">
-                  Brought to you on the solana network, providing seamless and secure tx's. Use your favorite wallet provider to HODL Orca Monsta today!
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="flex flex-col bg-white/60 border-teal-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
-              <CardHeader>
-                <div className="group-hover:scale-110 transition-transform duration-300">
-                  <FileText className="h-10 w-10 text-teal-600" />
-                </div>
-                <CardTitle className="text-teal-700 group-hover:text-teal-600 transition-colors">
-                  Technology
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-teal-600">
-                  Built on Solana's cutting-edge blockchain, featuring automated smart contracts, advanced tokenomics and our own revolutionary, never before seen technology.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-        <section className="container space-y-6 py-8 md:py-12 lg:py-24">
-          <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-            <h2 className="font-heading text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl text-teal-600">
-              How It Works
-            </h2>
-            <button 
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
-            >
-              {isExpanded ? 'Hide Content' : 'Watch Video'}
-            </button>
-
-            <AnimatePresence>
-              {isExpanded && (
-                <motion.div 
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="w-full max-w-4xl mx-auto mt-8"
-                >
-                  <section className="bg-white/60 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-teal-200">
-                    <div className="flex justify-center items-center mb-8">
-                      <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg">
-                        <iframe 
-                          src="https://www.youtube.com/embed/LJ3jUXtnFGA?si=Csez2HSKaaUszk-j" 
-                          title="YouTube video player" 
-                          frameBorder="0" 
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                          allowFullScreen
-                          className="absolute top-0 left-0 w-full h-full"
-                        ></iframe>
-                      </div>
-                    </div>
-                    
-                    <div className="prose prose-teal max-w-none text-left space-y-6 px-4">
-                      {/* Introduction */}
-                      <div className="border-l-4 border-teal-500 pl-4">
-                        <p className="text-lg text-gray-700 leading-relaxed">
-                          Alright, here's a simplified explanation of the Orca Whirlpool project & fee distribution concept:
-                        </p>
-                        
-                        <p className="text-lg text-gray-700 leading-relaxed mt-4">
-                          When the Orca Whirlpool configuration system is up and running, here's how it will work:
-                        </p>
-                      </div>
-
-                      <div className="space-y-6">
-                        {/* Orca Protocol Fees */}
-                        <div>
-                          <h3 className="text-xl font-bold text-teal-700 mb-2">
-                            Orca Protocol Fees
-                          </h3>
-                          <p className="text-gray-700 leading-relaxed">
-                            Fees generated from the protocol will go not only to the specific pools involved in successful prediction markets (which win rounds through swaps), but 10% of all protocol fees will also go directly to $ORCA token holders. This adds a valuable utility to $ORCA, rewarding holders and making the token more attractive.
-                          </p>
-                        </div>
-
-                        {/* App Functionality */}
-                        <div>
-                          <h3 className="text-xl font-bold text-teal-700 mb-2">
-                            App Functionality
-                          </h3>
-                          <p className="text-gray-700 leading-relaxed">
-                            This app functions as an automated trading tool within the Orca ecosystem. When users interact with it, they are essentially "aping into" (or investing in) specific pools. Similar to platforms like Bullx or Photon, the app automatically trades and optimizes all your Orca positions. It does this on the backend using a unique key generated by the app to manage your assets effectively.
-                          </p>
-                        </div>
-
-                        {/* High Yield Potential */}
-                        <div>
-                          <h3 className="text-xl font-bold text-teal-700 mb-2">
-                            High Yield Potential
-                          </h3>
-                          <p className="text-gray-700 leading-relaxed">
-                            The idea is that this tool will generate high annual returns (potentially in the millions of percent, theoretically speaking) by efficiently managing positions and capturing trading fees.
-                          </p>
-                        </div>
-
-                        {/* Fee Distribution */}
-                        <div>
-                          <h3 className="text-xl font-bold text-teal-700 mb-2">
-                            Fee Distribution
-                          </h3>
-                          <ul className="space-y-2 text-gray-700 list-disc pl-5">
-                            <li>10% of fees are returned to $ORCA token holders, enhancing the token's appeal.</li>
-                            <li>90% of fees are allocated to emerging prediction market pools, such as those in a Polymarket-style system. This means new or smaller pools will receive a portion of these accumulated fees based on their total value locked (TVL), helping to grow their resources over time.</li>
-                          </ul>
-                        </div>
-                      </div>
-
-                      {/* Conclusion */}
-                      <div className="border-l-4 border-teal-500 pl-4">
-                        <p className="text-lg text-gray-700 leading-relaxed">
-                          In essence, as more people use this system, they fuel both their own pool investments and help bolster the Orca ecosystem, creating a dynamic and rewarding cycle.
-                        </p>
-                      </div>
-                    </div>
-                  </section>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </section>
-        <section className="container space-y-6 py-8 md:py-12 lg:py-24">
-          <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-            <h2 className="font-heading text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl text-teal-700">
-              Join the Orca Monsta Community today!
-            </h2>
-          </div>
-          <div className="mx-auto max-w-[64rem] w-full">
-            <style jsx>{`
-              #dexscreener-embed{
-                position:relative;
-                width:100%;
-                padding-bottom:125%;
-              }
-              @media(min-width:1400px){
-                #dexscreener-embed{
-                  padding-bottom:65%;
-                }
-              }
-              #dexscreener-embed iframe{
-                position:absolute;
-                width:100%;
-                height:100%;
-                top:0;
-                left:0;
-                border:0;
-                border-radius: 0.75rem;
-                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-              }
-            `}</style>
-            <div id="dexscreener-embed">
-              <iframe src="https://dexscreener.com/solana/6wSRYHNg1C7T9S5cSqXCijxmiVBMu8P8dMH9ckUhEW2A?embed=1&theme=dark"></iframe>
-            </div>
-          </div>
-        </section>
-      </main>
-      <footer className="w-full bg-gradient-to-b from-teal-50 via-emerald-100 to-blue-200 backdrop-blur-sm border-t border-teal-600 py-1 sticky bottom-0 left-0 right-0 z-50">
+      <main className="flex-1 w-full bg-gradient-to-r from-[#faef55]/30 to-[#30aa49]/30 font-['Cornerstone'] tracking-tighter">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center justify-center space-y-1">
-            <Link 
-              className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600 hover:scale-105 transition-transform leading-none" 
-              href="#"
-            >
-              ORCAMONSTA
-            </Link>
-            <p className="text-black font-medium text-xs">
-              © 2024 ORCAMONSTA. All rights reserved.
-            </p>
-            {/* Social Media Links */}
-            <div className="flex gap-6 mb-2">
-              <Link href="https://x.com/OrcaMonsta" target="_blank" className="hover:text-teal-700 transition-colors">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="https://t.me/+8BkOy7gJUElkZjQx" target="_blank" className="hover:text-teal-700 transition-colors">
-                <MessageCircle className="h-5 w-5" />
-                <span className="sr-only">Telegram</span>
-              </Link>
-              <Link href="https://orca-monsta.vercel.app/" target="_blank" className="hover:text-teal-700 transition-colors">
-                <Globe className="h-5 w-5" />
-                <span className="sr-only">Website</span>
-              </Link>
-              <Link href="https://dexscreener.com/solana/6wsryhng1c7t9s5csqxcijxmivbmu8p8dmh9ckuhew2a" target="_blank" className="hover:text-teal-700 transition-colors">
-                <img 
-                  src="/dexscreenericon.png" 
-                  alt="Dex Screener Logo" 
-                  className="h-7 w-7 -mt-0.5"
+        <section className="pt-0 md:pt-0 lg:pt-0">
+  <div className="mx-auto text-center relative">
+    {/* Full-width image container with removed top spacing */}
+    <div className="w-full px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full max-w-[1200px] mx-auto"> 
+        <img
+          src="/Landing Page Title.png"
+          alt="Orca Monsta"
+          className="w-full h-auto object-contain mt-0"
+          style={{
+            maxHeight: '70vh',
+            objectFit: 'contain',
+            objectPosition: 'top'
+          }}
+        />
+        
+        {/* Buttons overlaying the image - position maintained */}
+        <div className="absolute bottom-[20%] left-[35%] transform -translate-x-1/2 flex justify-center space-x-4 w-full px-4 sm:px-6">
+          <Link 
+            href="https://dexscreener.com/solana/6wsryhng1c7t9s5csqxcijxmivbmu8p8dmh9ckuhew2a"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-gradient-to-r from-[#30aa49] to-[#6acd0c] text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-sm sm:text-base"
+          >
+            Buy Orca Monsta
+          </Link>
+          <Link 
+            href="/whitepaper"
+            className="px-6 py-3 border-2 border-teal-600 text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-colors duration-200 text-sm sm:text-base"
+          >
+            Read Whitepaper
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+          <section className="py-4 md:py-6 lg:py-12">
+            <div className="relative -mt-20 md:-mt-24 lg:-mt-32">
+              {/* Full-width image */}
+              <div className="w-full">
+                <img
+                  src="/why choose.png"
+                  alt="Why Choose Orca Monsta?"
+                  className="w-full h-auto object-contain px-4 sm:px-6 lg:px-8"
                 />
-                <span className="sr-only">DEX Screener</span>
-              </Link>
+              </div>
+
+              {/* Overlaid cards grid - moved down 5% */}
+              <div className="absolute top-[55%] left-0 right-0 mx-auto grid justify-center gap-6 sm:grid-cols-2 md:max-w-[80rem] md:grid-cols-4 px-4 sm:px-6 lg:px-8">
+                {/* Revenue from Fees Card */}
+                <Card className="group bg-gradient-to-br from-[#faef55]/10 via-[#30aa49]/10 to-[#6acd0c]/10 backdrop-blur-sm 
+                  border-[#ccdc2a]/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl 
+                  hover:border-[#30aa49]/30 hover:from-[#faef55]/15 hover:via-[#30aa49]/15 hover:to-[#6acd0c]/15
+                  relative overflow-hidden rounded-xl min-w-[280px]">
+                  <CardHeader className="space-y-2 relative z-10">
+                    <div className="group-hover:scale-110 transition-transform duration-300 
+                      bg-gradient-to-br from-white/90 to-white/70 p-4 rounded-full w-fit
+                      shadow-lg group-hover:shadow-xl group-hover:rotate-3">
+                      <DollarSign className="h-12 w-12 text-black transition-colors" />
+                    </div>
+                    <CardTitle className="text-xl sm:text-2xl text-[#30aa49] group-hover:text-[#6acd0c] 
+                      transition-colors tracking-wider font-bold">
+                      Constant Revenue
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="relative z-10">
+                    <p className="text-base sm:text-lg text-[#30aa49]/70 group-hover:text-[#30aa49]/90 
+                      transition-colors leading-relaxed">
+                      Enjoy constant revenue from fees generated by organic & automated transactions from multiple liquidity pools, By holding $ORCA.
+                    </p>
+                  </CardContent>
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-[#6acd0c]/5 
+                    group-hover:via-white/10 group-hover:to-[#6acd0c]/10 transition-all duration-300" />
+                </Card>
+                
+                {/* Appreciating Asset Card */}
+                <Card className="group bg-gradient-to-tl from-[#faef55]/10 via-[#30aa49]/10 to-[#6acd0c]/10 backdrop-blur-sm 
+                  border-[#ccdc2a]/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl 
+                  hover:border-[#30aa49]/30 hover:from-[#faef55]/15 hover:via-[#30aa49]/15 hover:to-[#6acd0c]/15
+                  relative overflow-hidden rounded-xl min-w-[280px]">
+                  <CardHeader className="space-y-2 relative z-10">
+                    <div className="group-hover:scale-110 transition-transform duration-300 
+                      bg-gradient-to-tl from-white/90 to-white/70 p-4 rounded-full w-fit
+                      shadow-lg group-hover:shadow-xl group-hover:-rotate-3">
+                      <TrendingUp className="h-12 w-12 text-black transition-colors" />
+                    </div>
+                    <CardTitle className="text-xl sm:text-2xl text-[#30aa49] group-hover:text-[#6acd0c] 
+                      transition-colors tracking-wider font-bold">
+                      Appreciating Asset
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="relative z-10">
+                    <p className="text-base sm:text-lg text-[#30aa49]/70 group-hover:text-[#30aa49]/90 
+                      transition-colors leading-relaxed">
+                      Enjoy the inherent appreciation of Orca Monsta as Burn functions continually reduce the amounts of Orca Monsta in circulation.
+                    </p>
+                  </CardContent>
+                  <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-white/5 to-[#6acd0c]/5 
+                    group-hover:via-white/10 group-hover:to-[#6acd0c]/10 transition-all duration-300" />
+                </Card>
+                
+                {/* Easy to Use Card */}
+                <Card className="group bg-gradient-to-tr from-[#faef55]/10 via-[#30aa49]/10 to-[#6acd0c]/10 backdrop-blur-sm 
+                  border-[#ccdc2a]/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl 
+                  hover:border-[#30aa49]/30 hover:from-[#faef55]/15 hover:via-[#30aa49]/15 hover:to-[#6acd0c]/15
+                  relative overflow-hidden rounded-xl min-w-[280px]">
+                  <CardHeader className="space-y-2 relative z-10">
+                    <div className="group-hover:scale-110 transition-transform duration-300 
+                      bg-gradient-to-tr from-white/90 to-white/70 p-4 rounded-full w-fit
+                      shadow-lg group-hover:shadow-xl group-hover:rotate-3">
+                      <img 
+                        src="/solanalogo.png" 
+                        alt="Solana Logo" 
+                        className="h-[52px] w-[52px] object-contain brightness-100 transition-all duration-300"
+                      />
+                    </div>
+                    <CardTitle className="text-xl sm:text-2xl text-[#30aa49] group-hover:text-[#6acd0c] 
+                      transition-colors tracking-wider font-bold">
+                      Easy to Use
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="relative z-10">
+                    <p className="text-base sm:text-lg text-[#30aa49]/70 group-hover:text-[#30aa49]/90 
+                      transition-colors leading-relaxed">
+                      Brought to you on the Solana network, providing seamless and secure tx's. Use your favorite wallet provider to HODL Orca Monsta today!
+                    </p>
+                  </CardContent>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-[#6acd0c]/5 
+                    group-hover:via-white/10 group-hover:to-[#6acd0c]/10 transition-all duration-300" />
+                </Card>
+                
+                {/* Technology Card */}
+                <Card className="group bg-gradient-to-bl from-[#faef55]/10 via-[#30aa49]/10 to-[#6acd0c]/10 backdrop-blur-sm 
+                  border-[#ccdc2a]/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl 
+                  hover:border-[#30aa49]/30 hover:from-[#faef55]/15 hover:via-[#30aa49]/15 hover:to-[#6acd0c]/15
+                  relative overflow-hidden rounded-xl min-w-[280px]">
+                  <CardHeader className="space-y-2 relative z-10">
+                    <div className="group-hover:scale-110 transition-transform duration-300 
+                      bg-gradient-to-bl from-white/90 to-white/70 p-4 rounded-full w-fit
+                      shadow-lg group-hover:shadow-xl group-hover:-rotate-3">
+                      <FileText className="h-12 w-12 text-black transition-colors" />
+                    </div>
+                    <CardTitle className="text-xl sm:text-2xl text-[#30aa49] group-hover:text-[#6acd0c] 
+                      transition-colors tracking-wider font-bold">
+                      Technology
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="relative z-10">
+                    <p className="text-base sm:text-lg text-[#30aa49]/70 group-hover:text-[#30aa49]/90 
+                      transition-colors leading-relaxed">
+                      Built on Solana's cutting-edge blockchain, featuring automated smart contracts, advanced tokenomics and our own revolutionary, never before seen technology.
+                    </p>
+                  </CardContent>
+                  <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-white/5 to-[#6acd0c]/5 
+                    group-hover:via-white/10 group-hover:to-[#6acd0c]/10 transition-all duration-300" />
+                </Card>
+              </div>
             </div>
-            <div className="flex gap-4">
-              <Link className="text-sm font-medium hover:underline underline-offset-4" href="/terms">
-                Terms
+          </section>
+
+          <section className="py-8 md:py-12 lg:py-24">
+            <div className="relative">
+              {/* Title and Button */}
+              <div className="relative">
+                <div className="w-full">
+                  <img
+                    src="/howitworkstitle.png"
+                    alt="How It Works"
+                    className="w-full h-auto object-contain px-4 sm:px-6 lg:px-8 -mt-20 md:-mt-24 lg:-mt-32"
+                  />
+                </div>
+
+                <div className="absolute left-1/2 top-[60%] transform -translate-x-1/2 -translate-y-1/2">
+                  <button 
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-[#30aa49] to-[#6acd0c] text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+                  >
+                    {isExpanded ? 'Hide Content' : 'Watch Video'}
+                  </button>
+                </div>
+              </div>
+
+              {/* Expandable Content - positioned even closer to button */}
+              <AnimatePresence>
+                {isExpanded && (
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-full max-w-4xl mx-auto -mt-40 relative z-10"
+                  >
+                    <div className="bg-white/60 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-[#ccdc2a]/20">
+                      {/* YouTube Video Section */}
+                      <div className="flex justify-center items-center mb-8">
+                        <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+                          <iframe 
+                            src="https://www.youtube.com/embed/LJ3jUXtnFGA?si=Csez2HSKaaUszk-j" 
+                            title="YouTube video player" 
+                            frameBorder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowFullScreen
+                            className="absolute top-0 left-0 w-full h-full"
+                          ></iframe>
+                        </div>
+                      </div>
+                      
+                      {/* Text Content */}
+                      <div className="prose max-w-none text-left space-y-6 px-4">
+                        {/* Introduction */}
+                        <div className="relative">
+                          <h3 className="text-[#30aa49] font-bold text-3xl mb-4">
+                            Alright, here's a simplified explanation of the Orca Whirlpool project & fee distribution concept:
+                          </h3>
+                        </div>
+
+                        <div className="space-y-6">
+                          {/* Orca Protocol Fees */}
+                          <div>
+                            <h3 className="text-xl font-bold text-[#0e6627] mb-2">
+                              Orca Protocol Fees
+                            </h3>
+                            <p className="text-[#0e6627] leading-relaxed">
+                              Fees generated from the protocol will go not only to the specific pools involved in successful prediction markets (which win rounds through swaps), but 10% of all protocol fees will also go directly to $ORCA token holders. This adds a valuable utility to $ORCA, rewarding holders and making the token more attractive.
+                            </p>
+                          </div>
+
+                          {/* App Functionality */}
+                          <div>
+                            <h3 className="text-xl font-bold text-[#0e6627] mb-2">
+                              App Functionality
+                            </h3>
+                            <p className="text-[#0e6627] leading-relaxed">
+                              This app functions as an automated trading tool within the Orca ecosystem. When users interact with it, they are essentially "aping into" (or investing in) specific pools. Similar to platforms like Bullx or Photon, the app automatically trades and optimizes all your Orca positions. It does this on the backend using a unique key generated by the app to manage your assets effectively.
+                            </p>
+                          </div>
+
+                          {/* High Yield Potential */}
+                          <div>
+                            <h3 className="text-xl font-bold text-[#0e6627] mb-2">
+                              High Yield Potential
+                            </h3>
+                            <p className="text-[#0e6627] leading-relaxed">
+                              The idea is that this tool will generate high annual returns (potentially in the millions of percent, theoretically speaking) by efficiently managing positions and capturing trading fees.
+                            </p>
+                          </div>
+
+                          {/* Fee Distribution */}
+                          <div>
+                            <h3 className="text-xl font-bold text-[#0e6627] mb-2">
+                              Fee Distribution
+                            </h3>
+                            <ul className="space-y-2 text-[#0e6627] list-disc pl-5 marker:text-[#0e6627]">
+                              <li>10% of fees are returned to $ORCA token holders, enhancing the token's appeal.</li>
+                              <li>90% of fees are allocated to emerging prediction market pools, such as those in a Polymarket-style system. This means new or smaller pools will receive a portion of these accumulated fees based on their total value locked (TVL), helping to grow their resources over time.</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        {/* Conclusion */}
+                        <div className="relative">
+                          <h3 className="text-[#30aa49] font-bold text-2xl mb-4 text-center mx-auto">
+                            In essence, as more people use this system, they fuel both their own pool investments and help bolster the Orca ecosystem, creating a dynamic and rewarding cycle.
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </section>
+
+          <section className="py-8 md:py-12 lg:py-24">
+            <div className="relative">
+              {/* Background Image - moved up 70% */}
+              <img
+                src="/join.png"
+                alt="Join the Orca Monsta Community today!"
+                className="w-full h-auto object-contain absolute -top-[70%] left-0"
+              />
+              
+              {/* Dexscreener Embed */}
+              <div className="relative z-10 mx-auto max-w-[64rem] w-full">
+                <style jsx>{`
+                  #dexscreener-embed{
+                    position:relative;
+                    width:100%;
+                    padding-bottom:125%;
+                  }
+                  @media(min-width:1400px){
+                    #dexscreener-embed{
+                      padding-bottom:65%;
+                    }
+                  }
+                  #dexscreener-embed iframe{
+                    position:absolute;
+                    width:100%;
+                    height:100%;
+                    top:0;
+                    left:0;
+                    border:0;
+                    border-radius: 0.75rem;
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                  }
+                `}</style>
+                <div id="dexscreener-embed">
+                  <iframe src="https://dexscreener.com/solana/6wSRYHNg1C7T9S5cSqXCijxmiVBMu8P8dMH9ckUhEW2A?embed=1&theme=dark"></iframe>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer className="w-full border-t border-[#6acd0c]/20 sticky bottom-0 left-0 right-0 z-50 tracking-tighter">
+        <div className="bg-gradient-to-r from-[#faef55]/30 to-[#30aa49]/30 backdrop-blur-sm py-1">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col items-center justify-center space-y-1 font-['Cornerstone']">
+              <Link 
+                className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#30aa49] to-[#6acd0c] hover:scale-105 transition-transform leading-none" 
+                href="#"
+              >
+                ORCAMONSTA
               </Link>
-              <span className="text-sm text-teal-600">•</span>
-              <Link className="text-sm font-medium hover:underline underline-offset-4" href="/privacy">
-                Privacy
-              </Link>
+              <p className="text-[#30aa49] font-medium text-xs">
+                © 2024 ORCAMONSTA. All rights reserved.
+              </p>
+              {/* Social Media Links */}
+              <div className="flex gap-6 mb-2">
+                <Link 
+                  href="https://x.com/OrcaMonsta" 
+                  target="_blank" 
+                  className="text-black hover:text-[#6acd0c] transition-colors"
+                >
+                  <Twitter className="h-5 w-5" />
+                  <span className="sr-only">Twitter</span>
+                </Link>
+                <Link 
+                  href="https://t.me/+8BkOy7gJUElkZjQx" 
+                  target="_blank" 
+                  className="text-black hover:text-[#6acd0c] transition-colors"
+                >
+                  <MessageCircle className="h-5 w-5" />
+                  <span className="sr-only">Telegram</span>
+                </Link>
+                <Link 
+                  href="https://orca-monsta.vercel.app/" 
+                  target="_blank" 
+                  className="text-black hover:text-[#6acd0c] transition-colors"
+                >
+                  <Globe className="h-5 w-5" />
+                  <span className="sr-only">Website</span>
+                </Link>
+                <Link 
+                  href="https://dexscreener.com/solana/6wsryhng1c7t9s5csqxcijxmivbmu8p8dmh9ckuhew2a" 
+                  target="_blank" 
+                  className="text-black hover:text-[#6acd0c] transition-colors"
+                >
+                  <img 
+                    src="/dexscreenericon.png" 
+                    alt="Dex Screener Logo" 
+                    className="h-7 w-7 -mt-0.5"
+                  />
+                  <span className="sr-only">DEX Screener</span>
+                </Link>
+              </div>
+              <div className="flex gap-4 font-['Cornerstone']">
+                <Link className="text-sm font-medium text-[#30aa49] hover:text-[#6acd0c] hover:underline underline-offset-4" href="/terms">
+                  Terms
+                </Link>
+                <span className="text-sm text-[#30aa49]">•</span>
+                <Link className="text-sm font-medium text-[#30aa49] hover:text-[#6acd0c] hover:underline underline-offset-4" href="/privacy">
+                  Privacy
+                </Link>
+              </div>
             </div>
           </div>
         </div>
