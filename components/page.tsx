@@ -85,14 +85,14 @@ export function Page() {
           
           <div className="mx-auto flex max-w-[64rem] flex-col items-center gap-4 text-center">
             <div className="space-y-2">
-              <h1 className="font-heading text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent animate-fade-in">
+              <h1 className="font-heading text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent animate-gradient text-center">
                 ORCA MONSTA
               </h1>
-              <h2 className="font-heading text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl text-teal-700 animate-fade-in-up">
+              <h2 className="font-heading text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl text-teal-700 text-center">
                 The Future of Crypto is Here.
               </h2>
             </div>
-            <p className="max-w-[42rem] leading-normal text-teal-600 sm:text-xl sm:leading-8 animate-fade-in-up delay-100">
+            <p className="max-w-[42rem] text-lg sm:text-xl leading-relaxed font-medium bg-gradient-to-r from-teal-600 via-blue-500 to-teal-600 bg-[200%_auto] animate-shimmer bg-clip-text text-transparent">
               Discover the power of decentralized currency with Orca Monsta today. Generate passive income from multiple liquidity pools with our revolutionary algostable ecosystem when you HODL Orca Monsta.
             </p>
             <div className="flex space-x-4 animate-fade-in-up delay-200">
