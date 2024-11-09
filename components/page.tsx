@@ -1,4 +1,7 @@
+// Version 1.0.1 - Force refresh
 'use client'
+
+export const dynamic = 'force-dynamic'
 
 import * as React from 'react'
 import { useState } from 'react'
@@ -35,10 +38,17 @@ export function Page() {
   };
 
   return (
+<<<<<<< HEAD
     <div className="min-h-screen flex flex-col font-['Cornerstone'] tracking-tighter bg-gradient-to-r from-[#faef55]/30 to-[#30aa49]/30">
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px)] bg-[size:14px] opacity-3" />
       
       <header className="relative w-full border-b border-[#6acd0c]/20">
+=======
+    <div className="min-h-screen flex flex-col font-['Cornerstone'] tracking-tighter">
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px)] bg-[size:14px] opacity-10" />
+      
+      <header className="sticky top-0 z-50 w-full border-b border-[#6acd0c]/20 tracking-tighter">
+>>>>>>> 533383ca99c3ad834a0a799313b1ef56cecc67c2
         <div className="bg-gradient-to-r from-[#faef55]/30 to-[#30aa49]/30 backdrop-blur-sm">
           <div className="container mx-auto h-16 px-4">
             <div className="grid grid-cols-12 items-center h-full">
@@ -127,6 +137,7 @@ export function Page() {
           </div>
         </div>
       </header>
+<<<<<<< HEAD
       <main className="flex-1 w-full font-['Cornerstone']">
         <div className="container mx-auto px-4">
         <section className="pt-0 md:pt-0 lg:pt-0">
@@ -247,11 +258,142 @@ export function Page() {
                       Built on Solana's cutting-edge blockchain, featuring automated smart contracts, advanced tokenomics and our own revolutionary, never before seen technology.
                     </p>
                   </div>
+=======
+      <main className="flex-1 w-full bg-gradient-to-r from-[#faef55]/30 to-[#30aa49]/30 font-['Cornerstone'] tracking-tighter">
+        <div className="container mx-auto px-4">
+          {/* Landing section - added key positioning classes */}
+          <section className="relative min-h-[90vh] flex items-center justify-center">
+            <div className="mx-auto text-center w-full">
+              <div className="relative w-full max-w-[1200px] mx-auto"> 
+                <img
+                  src="/Landing Page Title.png"
+                  alt="Orca Monsta"
+                  className="w-full h-auto object-contain"
+                  style={{
+                    maxHeight: '70vh',
+                    objectFit: 'contain',
+                    objectPosition: 'top'
+                  }}
+                />
+                
+                {/* Updated button container */}
+                <div className="relative z-50 flex justify-center space-x-4 mt-8"> {/* Changed from absolute to relative positioning */}
+                  <a 
+                    href="https://dexscreener.com/solana/6wsryhng1c7t9s5csqxcijxmivbmu8p8dmh9ckuhew2a"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-gradient-to-r from-[#30aa49] to-[#6acd0c] text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-sm sm:text-base cursor-pointer"
+                  >
+                    Buy Orca Monsta
+                  </a>
+
+                  <a 
+                    href="/whitepaper"
+                    className="px-6 py-3 border-2 border-[#30aa49] text-[#30aa49] font-medium rounded-lg hover:bg-white hover:text-[#30aa49] hover:border-[#30aa49] transition-colors duration-200 text-sm sm:text-base cursor-pointer"
+                  >
+                    Read Whitepaper
+                  </a>
+>>>>>>> 533383ca99c3ad834a0a799313b1ef56cecc67c2
                 </div>
               </div>
             </div>
           </section>
 
+<<<<<<< HEAD
+=======
+          <section className="py-4 md:py-6 lg:py-12">
+            <div className="relative -mt-20 md:-mt-24 lg:-mt-32">
+              {/* Full-width image */}
+              <div className="w-full">
+                <img
+                  src="/why choose.png"
+                  alt="Why Choose Orca Monsta?"
+                  className="w-full h-auto object-contain px-4 sm:px-6 lg:px-8"
+                />
+              </div>
+
+              {/* Overlaid cards grid - moved down 5% */}
+              <div className="absolute top-[55%] left-0 right-0 mx-auto grid justify-center gap-6 sm:grid-cols-2 md:max-w-[80rem] md:grid-cols-4 px-4 sm:px-6 lg:px-8">
+                {/* Revenue from Fees Container */}
+                <div className="group bg-gradient-to-br from-[#faef55]/10 via-[#30aa49]/10 to-[#6acd0c]/10 backdrop-blur-sm 
+                  border-[#ccdc2a]/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl 
+                  hover:border-[#30aa49]/30 hover:from-[#faef55]/15 hover:via-[#30aa49]/15 hover:to-[#6acd0c]/15
+                  relative overflow-hidden rounded-xl min-w-[280px] p-6">
+                  <div className="flex flex-col space-y-4">
+                    <div className="bg-white/90 p-4 rounded-full w-fit">
+                      <DollarSign className="h-12 w-12 text-black" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#30aa49]">
+                      Revenue from Fees
+                    </h3>
+                    <p className="text-[#30aa49]/70">
+                      Enjoy constant revenue from fees generated by organic & automated transactions from multiple liquidity pools, By holding $ORCA.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Appreciating Asset Container */}
+                <div className="group bg-gradient-to-br from-[#faef55]/10 via-[#30aa49]/10 to-[#6acd0c]/10 backdrop-blur-sm 
+                  border-[#ccdc2a]/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl 
+                  hover:border-[#30aa49]/30 hover:from-[#faef55]/15 hover:via-[#30aa49]/15 hover:to-[#6acd0c]/15
+                  relative overflow-hidden rounded-xl min-w-[280px] p-6">
+                  <div className="flex flex-col space-y-4">
+                    <div className="bg-white/90 p-4 rounded-full w-fit">
+                      <TrendingUp className="h-12 w-12 text-black" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#30aa49]">
+                      Appreciating Asset
+                    </h3>
+                    <p className="text-[#30aa49]/70">
+                      Enjoy the inherent appreciation of Orca Monsta as Burn functions continually reduce the amounts of Orca Monsta in circulation.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Easy to Use Container */}
+                <div className="group bg-gradient-to-br from-[#faef55]/10 via-[#30aa49]/10 to-[#6acd0c]/10 backdrop-blur-sm 
+                  border-[#ccdc2a]/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl 
+                  hover:border-[#30aa49]/30 hover:from-[#faef55]/15 hover:via-[#30aa49]/15 hover:to-[#6acd0c]/15
+                  relative overflow-hidden rounded-xl min-w-[280px] p-6">
+                  <div className="flex flex-col space-y-4">
+                    <div className="bg-white/90 p-4 rounded-full w-fit">
+                      <img 
+                        src="/solanalogo.png" 
+                        alt="Solana Logo" 
+                        className="h-[52px] w-[52px] object-contain"
+                      />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#30aa49]">
+                      Easy to Use
+                    </h3>
+                    <p className="text-[#30aa49]/70">
+                      Brought to you on the Solana network, providing seamless and secure tx's. Use your favorite wallet provider to HODL Orca Monsta today!
+                    </p>
+                  </div>
+                </div>
+
+                {/* Technology Container */}
+                <div className="group bg-gradient-to-br from-[#faef55]/10 via-[#30aa49]/10 to-[#6acd0c]/10 backdrop-blur-sm 
+                  border-[#ccdc2a]/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl 
+                  hover:border-[#30aa49]/30 hover:from-[#faef55]/15 hover:via-[#30aa49]/15 hover:to-[#6acd0c]/15
+                  relative overflow-hidden rounded-xl min-w-[280px] p-6">
+                  <div className="flex flex-col space-y-4">
+                    <div className="bg-white/90 p-4 rounded-full w-fit">
+                      <FileText className="h-12 w-12 text-black" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#30aa49]">
+                      Technology
+                    </h3>
+                    <p className="text-[#30aa49]/70">
+                      Built on Solana's cutting-edge blockchain, featuring automated smart contracts, advanced tokenomics and our own revolutionary, never before seen technology.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+>>>>>>> 533383ca99c3ad834a0a799313b1ef56cecc67c2
           <section className="py-8 md:py-12 lg:py-24">
             <div className="relative">
               {/* Title and Button */}
@@ -406,7 +548,11 @@ export function Page() {
           </section>
         </div>
       </main>
+<<<<<<< HEAD
       <footer className="w-full border-t border-[#6acd0c]/20">
+=======
+      <footer className="w-full border-t border-[#6acd0c]/20 sticky bottom-0 left-0 right-0 z-50 tracking-tighter">
+>>>>>>> 533383ca99c3ad834a0a799313b1ef56cecc67c2
         <div className="bg-gradient-to-r from-[#faef55]/30 to-[#30aa49]/30 backdrop-blur-sm py-1">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center justify-center space-y-1 font-['Cornerstone']">
