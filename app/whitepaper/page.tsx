@@ -71,13 +71,12 @@ export default function Whitepaper() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-teal-50 via-emerald-100 to-blue-200 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -left-4 top-1/4 h-72 w-72 rounded-full bg-blue-300/20 blur-3xl animate-pulse"></div>
-        <div className="absolute right-0 top-1/2 h-96 w-96 rounded-full bg-teal-300/20 blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-emerald-300/20 blur-3xl animate-pulse"></div>
-      </div>
+    <div className="min-h-screen bg-[#f5f1e4] font-['Cornerstone'] relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px)] bg-[size:14px]" />
+      <div className="absolute top-0 -left-4 w-[400px] h-[400px] bg-[#faef55]/30 rounded-full blur-[128px]" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#30aa49]/20 rounded-full blur-[128px]" />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#6acd0c]/20 rounded-full blur-[128px]" />
 
       <div className="max-w-4xl mx-auto p-8 relative z-10">
         {/* Header */}
@@ -87,17 +86,17 @@ export default function Whitepaper() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
+          <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-[#30aa49] to-[#6acd0c] bg-clip-text text-transparent">
             ORCA Whitepaper
           </h1>
-          <div className="text-teal-700 text-xl">Making waves in the crypto ocean</div>
+          <div className="text-[#30aa49] text-xl">Making waves in the crypto ocean</div>
         </motion.div>
 
         {/* Sections */}
         {sections.map((section, index) => (
           <motion.div
             key={index}
-            className="mb-12 bg-white/60 rounded-xl p-8 shadow-lg border border-teal-200 backdrop-blur-sm hover:shadow-xl transition-all duration-300"
+            className="mb-12 bg-white/60 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-[#ccdc2a]/20 hover:border-[#30aa49]/30 transition-all duration-300"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
@@ -105,25 +104,25 @@ export default function Whitepaper() {
           >
             <div className="flex items-center gap-4 mb-4">
               {section.icon}
-              <h2 className="text-2xl font-bold text-teal-700">{section.title}</h2>
+              <h2 className="text-2xl font-bold text-[#30aa49]">{section.title}</h2>
             </div>
             {Array.isArray(section.content) ? (
               <ul className="space-y-4">
                 {section.content.map((item, i) => (
                   <motion.li 
                     key={i}
-                    className="flex items-start text-teal-700"
+                    className="flex items-start text-[#30aa49]/80"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
                   >
-                    <ArrowRight className="h-5 w-5 mr-2 mt-1 flex-shrink-0 text-teal-500" />
+                    <ArrowRight className="h-5 w-5 mr-2 mt-1 flex-shrink-0 text-[#30aa49]" />
                     <span>{item}</span>
                   </motion.li>
                 ))}
               </ul>
             ) : (
-              <p className="text-teal-700 leading-relaxed">{section.content}</p>
+              <p className="text-[#30aa49]/80 leading-relaxed">{section.content}</p>
             )}
           </motion.div>
         ))}
@@ -135,10 +134,10 @@ export default function Whitepaper() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl font-bold mb-6 text-teal-700">Ready to dive in with $ORCA? 🐋</h2>
+          <h2 className="text-4xl font-bold mb-6 text-[#30aa49]">Ready to dive in with $ORCA? 🐋</h2>
           <Link 
             href="/"
-            className="px-6 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#30aa49] to-[#6acd0c] text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
           >
             Join the Pod
           </Link>
