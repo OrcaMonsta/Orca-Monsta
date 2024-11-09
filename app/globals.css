@@ -4,7 +4,7 @@
 
 body {
   font-family: 'BERNIER Shade', sans-serif !important;
-  background: linear-gradient(to right, #faef55, #30aa49);
+  background: linear-gradient(to right, rgba(250, 239, 85, 0.3), rgba(48, 170, 73, 0.3));
   min-height: 100vh;
 }
 
