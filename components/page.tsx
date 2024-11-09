@@ -110,10 +110,11 @@ export function Page() {
                   <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-[#6acd0c] scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                 </Link>
                 <Link 
-                  href="/whitepaper"
-                  className="px-6 py-3 border-2 border-[#30aa49] text-[#30aa49] font-medium rounded-lg hover:bg-white/50 transition-colors duration-200 text-sm sm:text-base"
+                  href="/whitepaper" 
+                  className="relative text-[#30aa49] hover:text-[#6acd0c] transition-colors group"
                 >
-                  Read Whitepaper
+                  Whitepaper
+                  <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-[#6acd0c] scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                 </Link>
               </nav>
 
@@ -155,7 +156,7 @@ export function Page() {
                     </Link>
                     <Link 
                       href="/whitepaper"
-                      className="px-6 py-3 border-2 border-[#30aa49] text-[#30aa49] font-medium rounded-lg hover:bg-white/50 transition-colors duration-200 text-sm sm:text-base"
+                      className="px-6 py-3 border-2 border-[#30aa49] text-[#30aa49] font-medium rounded-lg hover:bg-white hover:text-[#30aa49] hover:border-[#30aa49] transition-colors duration-200 text-sm sm:text-base"
                     >
                       Read Whitepaper
                     </Link>
